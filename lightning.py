@@ -23,6 +23,7 @@ c_light = 3e8
 c_sound = 331.3
 ## Scale
 scale = 150
+scale = 250
 ## Screen Dimentions
 X = Y = int(scale*1.6)
 
