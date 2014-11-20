@@ -18,11 +18,9 @@ key_color = 255, 0, 255
 white_color = 255, 255, 255
 
 # Constants
-## Speeds
-c_light = 3e8
+## Speed
 c_sound = 331.3
 ## Scale
-scale = 150
 scale = 250
 ## Screen Dimentions
 X = Y = int(scale*1.6)
@@ -58,6 +56,7 @@ def input_():
                 return True
 
 def reset():
+    # blits a rect over the button
     pygame.draw.rect(sur_screen, background_color, (scale/8, scale/8, X-scale/4, Y-scale/4))
 
 def main():
@@ -74,7 +73,7 @@ def main():
             print time()
             pygame.display.flip()
         if len(times) == 2 and keydown:
-            distance = str(round(c_sound * (times[1] - times[0]))) + "m"
+            distance = str(round(c_sound * (times[1] - times[0])))[:-2] + "m"
             times = []
             reset()
             sur_screen.blit(btn_blank, ((X-scale)/2, (Y-scale)/2))
